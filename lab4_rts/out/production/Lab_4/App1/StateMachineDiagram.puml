@@ -1,0 +1,29 @@
+@startuml
+
+[*] --> STATE_1
+
+state STATE_1 {
+    STATE_1 --> STATE_2: Thread Start
+}
+
+state STATE_2 {
+    STATE_2 --> STATE_3: synchronized (monitor)
+}
+
+state STATE_3 {
+    STATE_3 --> STATE_4: synchronized (monitor2)
+}
+
+state STATE_4 {
+    STATE_4 --> STATE_5: Processing activity
+}
+
+state STATE_5 {
+    STATE_5 --> STATE_6: Sleeping
+}
+
+state STATE_6 {
+    STATE_6 --> STATE_1: Thread End
+}
+
+@enduml
